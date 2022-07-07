@@ -23,6 +23,7 @@ def compute_on_dataset(model, data_loader, device, timer=None):
                 torch.cuda.synchronize()
                 timer.toc()
             output = output.to(cpu_device)
+            print("[DEBUG] predcition shape: ", output.shape)
         results_dict.update(
             {img_id: output for img_id in image_ids}
         )
