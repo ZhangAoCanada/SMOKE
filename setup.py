@@ -34,11 +34,11 @@ def get_extensions():
         sources += source_cuda
         define_macros += [("WITH_CUDA", None)]
         extra_compile_args["nvcc"] = [
-            "-DCUDA_HAS_FP16=1",  # Whether a short float (float16,fp16) is supported.
-            "-D__CUDA_NO_HALF_OPERATORS__", # https://github.com/pytorch/pytorch/blob/master/cmake/Dependencies.cmake#L1117
-            "-DCUDA_HOST_COMPILER=/usr/bin/gcc-6",
-            "-D__CUDA_NO_HALF_CONVERSIONS__",
-            "-D__CUDA_NO_HALF2_OPERATORS__",
+            # "-DCUDA_HAS_FP16=1",  # Whether a short float (float16,fp16) is supported.
+            # "-D__CUDA_NO_HALF_OPERATORS__", # https://github.com/pytorch/pytorch/blob/master/cmake/Dependencies.cmake#L1117
+            # # "-DCUDA_HOST_COMPILER=/usr/bin/gcc-6",
+            # "-D__CUDA_NO_HALF_CONVERSIONS__",
+            # "-D__CUDA_NO_HALF2_OPERATORS__",
         ]
     else:
         raise NotImplementedError("cuda is not available")
